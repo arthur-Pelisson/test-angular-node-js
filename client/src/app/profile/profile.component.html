@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="jumbotron mt-5">
+    <div class="col-sm-8 mx-auto">
+      <h1 class="text-center">PROFILE</h1>
+    </div>
+    <table class="table col-md-8 mx-auto">
+      <tr>
+        <td>Fist Name</td>
+        <td>{{ details?.first_name }}</td>
+         <td><button class="btn btn-primary" (click)="onClickMeFirstName()">Change</button></td>
+        <td *ngIf="firstNameSubmit">
+          <form [formGroup]="updateProfileFormFirstName" (ngSubmit)="onSubmit(updateProfileFormFirstName.value)">
+          <input formControlName="first_name"  type="text" class="form-control" name="first_name" placeholder="Enter your new first name ">
+          <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback d-block">
+            <div *ngIf="f.last_name.errors.required">Last Name is required</div>
+        </div>
+        <div class="text-center">
+          <button class="button btn btn-success" type="submit">Confirm</button>
+          <button (click)="onClickMeFirstNameAnule()" class="button btn btn-danger">Anule</button>
+        </div>
+        </form>
+        </td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td>{{ details?.last_name }}</td>
+        <td><button class="btn btn-primary" (click)="onClickMeLastName()">Change</button></td>
+        <td *ngIf="last_name_submit">
+          <form [formGroup]="updateProfileFormLastName" (ngSubmit)="onSubmit(updateProfileFormLastName.value)">
+          <input formControlName="last_name"  type="text" class="form-control" name="last_name" placeholder="Enter your new last name ">
+          <div *ngIf="submitted && l.last_name.errors" class="invalid-feedback d-block">
+            <div *ngIf="l.last_name.errors.required">Last Name is required</div>
+        </div>
+          <button class="button btn btn-success" type="submit">Confirm</button>
+          <button (click)="onClickMeLastNameAnule()" class="button btn btn-danger">Anule</button>
+        </form>
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{ details?.email }}</td>
+        <td><button class="btn btn-primary" (click)="onClickMeEmail()">Change</button></td>
+        <td *ngIf="emailSubmit">
+          <form [formGroup]="updateProfileFormEmail" (ngSubmit)="onSubmit(updateProfileFormEmail.value)">
+          <input formControlName="email"  type="text" class="form-control" name="email" placeholder="Enter your new email ">
+          <div *ngIf="submitted && e.email.errors" class="invalid-feedback d-block">
+            <div *ngIf="e.email.errors.required">Email is required</div>
+            <div *ngIf="e.email.errors.email">Email must be a valid email address</div>
+        </div>
+          <button class="button btn btn-success" type="submit">Confirm</button>
+          <button (click)="onClickMefEmailAnule()" class="button btn btn-danger">Anule</button>
+        </form>
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>********</td>
+        <td><button class="btn btn-primary" (click)="onClickMepassword()">Change</button></td>
+        <td *ngIf="passwordSubmit">
+          <form [formGroup]="updateProfileFormPassword" (ngSubmit)="onSubmit(updateProfileFormPassword.value)">
+          <input formControlName="password"  type="password" class="form-control" name="password" placeholder="Enter your new password">
+          <div *ngIf="submitted && p.password.errors" class="invalid-feedback d-block">
+            <div *ngIf="p.password.errors.required">Password is required</div>
+            <div *ngIf="p.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+        <div *ngIf="oldNewPassword && submitted" class="invalid-feedback d-block">The new password can't be the same at the old</div>
+          <input formControlName="confirmPassword"  type="password" class="form-control" name="confirmPassword" placeholder="Confirm your new password">
+          <div *ngIf="submitted && p.confirmPassword.errors" class="invalid-feedback d-block">
+            <div *ngIf="p.confirmPassword.errors.required">Confirm Password is required</div>
+            <div *ngIf="p.confirmPassword.errors.mustMatch">Passwords must match</div>
+        </div>
+          <button class="button btn btn-success" type="submit">Confirm</button>
+          <button (click)="onClickMePasswordAnule()" class="button btn btn-danger">Anule</button>
+
+        </form>
+        </td>
+      </tr>
+    </table>
+    <div class="text-center">
+      <button class='btn btn-danger' (click)="onClickDeleteAccount()">Delete account</button>
+      </div>
+</div>

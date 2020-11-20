@@ -1,0 +1,17 @@
+{
+    "dev": {
+      "dialect": "mysql",
+      "user": "root",
+      "database": "project_pelisson",
+      "password": "le_mot_de_passe_choisi",
+      "host": "localhost"
+    },
+
+    "production": {
+      "dialect": "mysql",
+      "user": "root",
+      "database": "project_pelisson",
+      "password": "le_mot_de_passe_choisi",
+      "host": "localhost"
+    }
+  }

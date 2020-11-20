@@ -1,0 +1,37 @@
+{
+  "name": "test-angular-nodeJS-V2",
+  "version": "1.0.0",
+  "description": "test V2 learning to create a register and login with angular node.js express and mysql",
+  "main": "index.js",
+  "scripts": {
+    "test": "node server.js",
+    "dev": "nodemon server.js",
+    "start": "gnome-terminal -e 'bash -c \"nodemon server.js\"' && gnome-terminal -e 'bash -c \"cd ./client; npm start\"'"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.epitech.eu:/arthur.pelisson@epitech.eu/test-angular-nodeJS-V2"
+  },
+  "keywords": [
+    "nodejs",
+    "jwt",
+    "passport",
+    "express"
+  ],
+  "author": "Arjun Araneta",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^7.4.2",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.44.2",
+    "sequelize-cli": "^5.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
